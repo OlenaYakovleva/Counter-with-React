@@ -3,6 +3,9 @@ import {useState} from 'react';
 
 
 export function Counter() {
+    // Counter component using useState hook
+    console.log("render Counter component");
+    
     const [count, setCount] = useState(0);
     const increment = () => setCount(count + 1);
     const decrement = () => setCount(count - 1);
