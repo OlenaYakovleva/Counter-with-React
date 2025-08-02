@@ -7,7 +7,7 @@ import { checkDraw, checkWinner } from "./utils";
 
 export function Game() {
   console.log("render Game component");
-  const title = "Гра христики-нулики";
+  const title = "Tic Tac Toe";
 
   const [gameBoard, setGameBoard] = useState(Array(9).fill(null));
   const [currentPlayer, setCurrentPlayer] = useState("X");
@@ -36,10 +36,10 @@ export function Game() {
       <GameTitle title={title} />
       <GameTurn>
         {winner
-          ? `Виграш гравця ${winner.winner}`
+          ? `Player won ${winner.winner}`
           : draw
-          ? "Нічья!"
-          : `Хід гравця ${currentPlayer}`}
+          ? "Draw!"
+          : `Players turn ${currentPlayer}`}
       </GameTurn>
       <div className={styles.board}>
         {gameBoard.map((cell, index) => {
@@ -59,7 +59,7 @@ export function Game() {
         })}
       </div>
       <button className={styles.reset} onClick={resetGame}>
-        Скинути гру
+        Reset Game
       </button>
     </div>
   );
